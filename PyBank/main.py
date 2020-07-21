@@ -66,12 +66,12 @@ if (count_months == 1):
     average_profit_loss = round(sum_profit_loss/(count_months - 1), 2)
 
     # highest and lowest changes in "Profit/Losses" over the entire period
-    highest_change = max(profit_loss_changes)
-    lowest_change = min(profit_loss_changes)
+    greatest_increase = max(profit_loss_changes)
+    greatest_decrease = min(profit_loss_changes)
 
     # Locate the index value of highest and lowest changes in "Profit/Losses" over the entire period
-    highest_month_index = profit_loss_changes.index(highest_change)
-    lowest_month_index = profit_loss_changes.index(lowest_change)
+    highest_month_index = profit_loss_changes.index(greatest_increase)
+    lowest_month_index = profit_loss_changes.index(greatest_decrease)
 
     # Assign best and worst month
     best_month = months[highest_month_index]
@@ -83,8 +83,8 @@ print("----------------------------")
 print(f"Total Months:  {count_months}")
 print(f"Total:  ${net_profit_loss}")
 print(f"Average Change:  ${average_profit_loss}")
-print(f"Greatest Increase in Profits:  {best_month} (${highest_change})")
-print(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})")
+print(f"Greatest Increase in Profits:  {best_month} (${greatest_increase})")
+print(f"Greatest Decrease in Losses:  {worst_month} (${greatest_decrease})")
 
 
 # -->>  Export a text file with the results
@@ -96,5 +96,5 @@ with open(budget_file, "w") as outfile:
     outfile.write(f"Total Months:  {count_months}\n")
     outfile.write(f"Total:  ${net_profit_loss}\n")
     outfile.write(f"Average Change:  ${average_profit_loss}\n")
-    outfile.write(f"Greatest Increase in Profits:  {best_month} (${highest_change})\n")
-    outfile.write(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})\n")
+    outfile.write(f"Greatest Increase in Profits:  {best_month} (${greatest_increase})\n")
+    outfile.write(f"Greatest Decrease in Losses:  {worst_month} (${greatest_decrease})\n")
