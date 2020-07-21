@@ -87,7 +87,7 @@ print(f"Greatest Decrease in Losses:  {worst_month} (${lowest_change})")
 
 
 # -->>  Export a text file with the results
-budget_file = os.path.join("Output", "budget_data.txt")
+budget_file = os.path.join("analysis", "budget_data.txt")
 with open(budget_file, "w") as outfile:
 
     outfile.write("Financial Analysis\n")
